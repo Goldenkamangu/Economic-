@@ -1,4 +1,4 @@
- {
+  {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,8 +39,8 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
     flex: 1;
 }
@@ -54,6 +54,8 @@ section {
     min-height: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
 }
 
 section:active {
@@ -103,12 +105,15 @@ footer {
 
     main {
         padding: 2rem 1.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 2rem;
     }
 
     section {
         padding: 2rem;
+        flex: 1 1 calc(50% - 1rem);
+        min-width: 280px;
     }
 
     section h2 {
@@ -140,10 +145,13 @@ footer {
     main {
         padding: 1rem;
         gap: 1rem;
+        flex-direction: column;
     }
 
     section {
         padding: 1rem;
+        width: 100%;
+        flex: 1 1 auto;
     }
 
     section h2 {
@@ -217,5 +225,3 @@ footer {
     section h2 {
         margin-bottom: 0.5rem;
         font-size: 1.1rem;
-    }
-}
